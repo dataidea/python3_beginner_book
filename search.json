@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "09_file_handling.html",
+    "href": "09_file_handling.html",
+    "title": "10  Python File Handling",
+    "section": "",
+    "text": "10.0.1 The open() function\nThe open() function allows us to read, create and update files\nIt takes 2 parameters:\nThe mode is a string that can either be any of the following:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Python File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "09_file_handling.html#python-file-reading",
+    "href": "09_file_handling.html#python-file-reading",
+    "title": "10  Python File Handling",
+    "section": "10.1 Python File reading",
+    "text": "10.1 Python File reading\nTo better explain this, let us say we have a folder named my_folder.\nInside my_folder we have the following files:\n\ndemo.txt\nmain_code.py\n\nThe content of the demo.txt file is the following\nHello World!\nI love Python\nNow our goal is to read the content of the demo.txt file and then print it using the main_code.py file\nTo achieve this, we will use the open() function with 'r' mode.\n# this is main code\n\nfile = open(\n    file='demo.txt',\n    mode='r'\n)\ncontent = file.read()\nprint(content)\nHello World!\nI love Python\n\n10.1.1 Reading Lines\nWe can also read each line using the readline() method.\n# this is main_code.py\n\nfile = open(\n    file='demo.txt',\n    mode='r'\n)\n\nfirst_line = file.readline()\nsecond_line = file.readline()\n\nprint('First line:', first_line)\nprint('Second line:', second_line)\nFirst line: Hello World!\n\nSecond line: I love Python",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Python File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "09_file_handling.html#writing-a-file",
+    "href": "09_file_handling.html#writing-a-file",
+    "title": "10  Python File Handling",
+    "section": "10.2 Writing a File",
+    "text": "10.2 Writing a File\nIn simplest terms, writing a file means modifying the content of a file or creating it if it doesnot exist yet.\nIn Python, there are 2 modes to write to file.\n\n'w' - overwrites content of a file, creates file if it does not exist\n'a' - appends content to the end of a file, creates the file if it does not exist\n\nExample To better explain this, lets say we have a folder named my_folder. Inside my_folder we have the following files\n\ndemo.txt\nmain_code.py\n\nThe content of the demo.txt file is the following\nI love Python\nIn this example, we will use the 'w' mode which will overwrite(replace) the content of the file\n# this is main_code.py\n\nfile = open(\n    file='demo.txt',\n    mode='w'\n)\nfile.write('I love JavaScript')\nfile.close()\nWhen the above code is run, the content of the file demo.txt will be this:\nI love JavaScript\nAnother example, this time we will use the a mode which will append or add content to the end of the file\n# this is main_code.py\n\nfile = open(\n    file='demo.txt',\n    mode='a'\n)\nfile.write(' and JavaScript')\nfile.close()\nWhen the above script is run, the content of the demo.txt file will be this:\nI love Python and JavaScript",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Python File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "09_file_handling.html#deleting-a-file",
+    "href": "09_file_handling.html#deleting-a-file",
+    "title": "10  Python File Handling",
+    "section": "10.3 Deleting a file",
+    "text": "10.3 Deleting a file\nTo delete a file, use the os module. The os modules contains the remove() method which we can use to delete files.\n# this is main_code.py\n\n# import os\n\n# os.remove('demo.txt')",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Python File Handling</span>"
+    ]
+  }
+]
